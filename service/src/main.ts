@@ -20,7 +20,7 @@ async function bootstrap()
     .addTag("NEST")
     .build();
   const document = SwaggerModule.createDocument(app,config);
-  SwaggerModule.setup("/",app,document);
+  SwaggerModule.setup("/docs",app,document);
 
   await app.listen(PORT,() => console.log(`Server has been started on the PORT=${PORT} with protocol=HTTP http://localhost:${PORT}`));
 }

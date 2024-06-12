@@ -1,6 +1,6 @@
 import IDeal from '../../utils/interfaces';
 import TableCell from '@mui/material/TableCell';
-import { Avatar,Box,Chip,TableRow } from '@mui/material';
+import { Avatar,Box,TableRow } from '@mui/material';
 import React from 'react';
 import Collapse from '@mui/material/Collapse';
 import IconButton from '@mui/material/IconButton';

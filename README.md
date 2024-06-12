@@ -8,7 +8,7 @@ API-приложение для доступа к сделкам и их кон�
 
 ## Run
 
-### NestJS
+### NestJS and SPA
 
 `cd service`
 
@@ -26,9 +26,11 @@ REDIRECT_URI=your redirect
 
 `npm i && npm run start`
 
-Go to swagger: <http://localhost:8080>
+Go to: <http://localhost:8080>
 
-### Front-end (React & Vite)
+Go to swagger: <http://localhost:8080/docs>
+
+### Front-end for development (React & Vite)
 
 `cd client && npm i && npm run dev`
 
