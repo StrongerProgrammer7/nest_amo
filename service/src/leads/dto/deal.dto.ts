@@ -25,7 +25,7 @@ export class DealDto
 	@ApiProperty({ example: 'ContactName' })
 	contactName?: string;
 	@ApiProperty({ example: [{ code: "EMAIL",value: "exampl@mail.com" }] })
-	contact?:
+	contacts?:
 		{
 			code: string;
 			value: string;

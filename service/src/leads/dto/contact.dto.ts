@@ -29,6 +29,16 @@ class CustomFieldContact
 		];
 }
 
+export class BriefContactDto
+{
+	readonly name: string;
+	readonly contacts?:
+		{
+			code: string;
+			value: string;
+		}[];
+}
+
 export class ContactDto
 {
 	@ApiProperty({ example: 2580719 })

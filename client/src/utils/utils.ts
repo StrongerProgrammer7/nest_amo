@@ -8,13 +8,6 @@ export const getDeals = async (query?: string): Promise<IDeal[]> =>
 	try 
 	{
 		return await getDataFetch<IDeal[]>(`${BASE_URL}/leads${query ? "?query=" + query : ""}`);
-		// return new Promise((resolve) =>
-		// {
-		// 	setTimeout(() =>
-		// 	{
-		// 		resolve(testData);
-		// 	},2000);
-		// });
 	} catch (error) 
 	{
 		console.log(error);

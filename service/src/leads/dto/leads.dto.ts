@@ -41,7 +41,7 @@ export class LeadDto
 	readonly "labor_cost"?: number;
 	readonly "_embedded"?:
 		{
-			readonly contacts:
+			readonly contacts?:
 			[
 				{
 					id: number;

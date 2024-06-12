@@ -54,7 +54,7 @@ function Row(props: { row: IDeal; })
 					<Collapse in={open} timeout="auto" unmountOnExit>
 						<Box sx={{ margin: 1 }}>
 							{
-								!row.contactName && <TableCell>No contact</TableCell>
+								!row.contactName && <TableCell>Контактов нет</TableCell>
 							}
 							{
 								row.contactName &&
@@ -65,7 +65,7 @@ function Row(props: { row: IDeal; })
 									}
 									<ul className={css.wrapper_contacts}>
 										{
-											row.contact && row.contact.map((elem,index) =>
+											row.contacts && row.contacts.map((elem,index) =>
 											{
 												return (
 													<li key={index}>

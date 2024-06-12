@@ -3,7 +3,7 @@ import TableCell,{ tableCellClasses } from '@mui/material/TableCell';
 import { styled,TableBody,TableContainer,TableHead,TableRow } from '@mui/material';
 import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
-import { FC } from 'react';
+import { FC,memo } from 'react';
 import Row from './Row';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -59,4 +59,4 @@ const MyTable: FC<ITable> = ({ data,ths }) =>
 	);
 };
 
-export default MyTable;
+export default memo(MyTable);

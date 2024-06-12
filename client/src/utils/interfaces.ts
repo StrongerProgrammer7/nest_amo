@@ -11,7 +11,7 @@ interface IDeal
 	userName: string;
 	colorDeal: string;
 	contactName?: string;
-	contact?:
+	contacts?:
 	{
 		code: string;
 		value: string;

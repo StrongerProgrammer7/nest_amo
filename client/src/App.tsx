@@ -1,4 +1,4 @@
-import { useEffect,useState } from 'react';
+import { useCallback,useEffect,useState } from 'react';
 import './App.css';
 import IDeal from './utils/interfaces';
 import TextField from '@mui/material/TextField';
@@ -14,19 +14,14 @@ function App()
   const [deals,setDeals] = useState<IDeal[]>([]);
   const [search,setSearch] = useState<string>("");
 
-  const handleLoadData = async (query?: string) =>
+  const handleLoadData = useCallback(async (query?: string) =>
   {
     setIsLoad(true);
-    try
-    {
-      const data = await getDeals(query);
-      setDeals(data);
-    } catch (error) 
-    {
-      setDeals([]);
-    }
+    const data = await getDeals(query);
+    setDeals(data);
     setIsLoad(false);
-  };
+  },[getDeals]);
+
   useEffect(() =>
   {
     handleLoadData();
@@ -40,7 +35,7 @@ function App()
     await handleLoadData(e.target.value === "" ? undefined : e.target.value);
     setSearch(e.target.value);
   };
-  const ths = ["Name","Budget","Status","Manager","Date created"];
+  const ths = ["Название","Бюджет","Статус","Ответ-ый менеджер","Дата создания"];
   const debounced = useDebounce(handleChange,800);
 
   return (
@@ -48,7 +43,7 @@ function App()
       <main className='main_content'>
         <div className='content'>
           <div className='head'>
-            <h2>Solution</h2>
+            <h2>Сделки</h2>
             {
               isLoad
                 ?
@@ -57,11 +52,11 @@ function App()
                 <TextField
                   hiddenLabel
                   id="outlined-size-small"
-                  placeholder='Search'
+                  placeholder='Поиск'
                   variant="outlined"
                   size="small"
                   color="secondary"
-                  label="searching"
+                  label="Поиск"
                   defaultValue={search}
                   onChange={(e) => debounced(e)}
                 />
@@ -86,11 +81,10 @@ function App()
                       &&
                       <div className="data_empty">
                         <AnnouncementIcon />
-                        <p>Data is empty</p>
+                        <p>Данные пусты</p>
                       </div>
                     }
                   </>
-
               }
             </div>
           </div>
