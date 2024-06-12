@@ -6,6 +6,13 @@ async function bootstrap()
 {
   const PORT = process.env.PORT || 5000;
   const app = await NestFactory.create(AppModule);
+  app.enableCors(
+    {
+      origin: 'http://localhost:5173',
+      methods: "GET",
+      credentials: true
+    }
+  );
   const config = new DocumentBuilder()
     .setTitle("Service leads")
     .setDescription("Server:NestJS and AmoCRM for get leads")

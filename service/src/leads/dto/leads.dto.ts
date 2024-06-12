@@ -39,7 +39,15 @@ export class LeadDto
 	readonly "account_id": number;
 	@ApiProperty({ example: 1742355 })
 	readonly "labor_cost"?: number;
-	readonly "_embedded"?: unknown;
+	readonly "_embedded"?:
+		{
+			readonly contacts:
+			[
+				{
+					id: number;
+				}
+			];
+		};
 }
 
 const embeddedExample: { leads: LeadDto[]; } =

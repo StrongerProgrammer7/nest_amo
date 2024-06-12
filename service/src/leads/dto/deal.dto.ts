@@ -20,4 +20,14 @@ export class DealDto
 	statusDeal: string;
 	@ApiProperty({ example: 'userName' })
 	userName: string;
+	@ApiProperty({ example: '#CCFF66' })
+	colorDeal: string;
+	@ApiProperty({ example: 'ContactName' })
+	contactName?: string;
+	@ApiProperty({ example: [{ code: "EMAIL",value: "exampl@mail.com" }] })
+	contact?:
+		{
+			code: string;
+			value: string;
+		}[];
 }
